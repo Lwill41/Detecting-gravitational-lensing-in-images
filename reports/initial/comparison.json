@@ -1,0 +1,218 @@
+{
+  "hough": {
+    "model": "Hough-feature logistic regression",
+    "feature_names": [
+      "normalized_vote_radius_4",
+      "normalized_vote_radius_6",
+      "normalized_vote_radius_8",
+      "normalized_vote_radius_10",
+      "normalized_vote_radius_12",
+      "normalized_vote_radius_14",
+      "normalized_vote_radius_16",
+      "normalized_vote_radius_18",
+      "normalized_vote_radius_20",
+      "best_vote",
+      "radius",
+      "center_offset",
+      "angular_coverage",
+      "ring_support",
+      "radial_gradient_alignment",
+      "edge_density"
+    ],
+    "train_count": 24324,
+    "radii_pixels": [
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20
+    ],
+    "center_search_radius_pixels": 6,
+    "canny_sigma": 1,
+    "canny_quantile_thresholds": [
+      0.7,
+      0.9
+    ],
+    "foreground_radial_smoothing_sigma": 3,
+    "raw_hough_validation": {
+      "average_precision": 0.06710351065232373,
+      "roc_auc": 0.5538504568338617,
+      "count": 6081,
+      "positives": 346,
+      "prevalence": 0.05689853642493011,
+      "recall_at_fpr_le_0.01": 0.014450867052023121,
+      "recall_at_fpr_le_0.001": 0.0
+    },
+    "elapsed_seconds": 209.3,
+    "manifest.csv_sha256": "4973790f345cea496622e923691aef8494112d84d954cd21c9378e5d043474f2",
+    "normalization.json_sha256": "c135720a7edb309c7ebcb24178d4cb8f6c6d06c7ac3e45e93fee1ba5b5672b5b",
+    "limitations": "Fixed circular approximation, approximate central galaxy, processed intensities, padding can produce false circles.",
+    "validation": {
+      "average_precision": 0.2654691306615629,
+      "roc_auc": 0.7963261788732607,
+      "count": 6081,
+      "positives": 346,
+      "prevalence": 0.05689853642493011,
+      "recall_at_fpr_le_0.01": 0.12716763005780346,
+      "recall_at_fpr_le_0.001": 0.02023121387283237
+    },
+    "test_evaluated": false
+  },
+  "cnn": {
+    "model": "cnn",
+    "epochs": 3,
+    "seed": 429,
+    "device": "cpu",
+    "prototype_run": true,
+    "parameters": 285857,
+    "train_count": 24324,
+    "training_labels": "both classes, balanced sampling",
+    "checkpoint_selection": "maximum validation AP",
+    "anomaly_score": null,
+    "raw_reconstruction_mse_metrics": null,
+    "elapsed_seconds": 315.9,
+    "manifest.csv_sha256": "4973790f345cea496622e923691aef8494112d84d954cd21c9378e5d043474f2",
+    "normalization.json_sha256": "c135720a7edb309c7ebcb24178d4cb8f6c6d06c7ac3e45e93fee1ba5b5672b5b",
+    "limitation": "Short CPU prototype; validation used for selection; no independent test claim.",
+    "validation": {
+      "average_precision": 0.7805520481784427,
+      "roc_auc": 0.9771769531978372,
+      "count": 6081,
+      "positives": 346,
+      "prevalence": 0.05689853642493011,
+      "recall_at_fpr_le_0.01": 0.6763005780346821,
+      "recall_at_fpr_le_0.001": 0.15606936416184972
+    },
+    "test_evaluated": false
+  },
+  "symmetry_ae": {
+    "model": "symmetry_ae",
+    "epochs": 2,
+    "seed": 429,
+    "device": "cpu",
+    "prototype_run": true,
+    "parameters": 20507,
+    "train_count": 24324,
+    "training_labels": "non-lenses only",
+    "checkpoint_selection": "minimum validation non-lens relative reconstruction error",
+    "anomaly_score": "MSE / (mean squared input intensity + 1e-8); larger means more lens-like anomaly",
+    "raw_reconstruction_mse_metrics": {
+      "average_precision": 0.03315507145970614,
+      "roc_auc": 0.19672505808064264,
+      "count": 6081,
+      "positives": 346,
+      "prevalence": 0.05689853642493011,
+      "recall_at_fpr_le_0.01": 0.0,
+      "recall_at_fpr_le_0.001": 0.0
+    },
+    "elapsed_seconds": 352.7,
+    "manifest.csv_sha256": "4973790f345cea496622e923691aef8494112d84d954cd21c9378e5d043474f2",
+    "normalization.json_sha256": "c135720a7edb309c7ebcb24178d4cb8f6c6d06c7ac3e45e93fee1ba5b5672b5b",
+    "limitation": "Short CPU prototype; validation used for selection; no independent test claim.",
+    "validation": {
+      "average_precision": 0.03175303304739183,
+      "roc_auc": 0.16114266420065412,
+      "count": 6081,
+      "positives": 346,
+      "prevalence": 0.05689853642493011,
+      "recall_at_fpr_le_0.01": 0.0,
+      "recall_at_fpr_le_0.001": 0.0
+    },
+    "test_evaluated": false
+  },
+  "plain_ae": {
+    "model": "plain_ae",
+    "epochs": 2,
+    "seed": 429,
+    "device": "cpu",
+    "prototype_run": true,
+    "parameters": 20507,
+    "train_count": 24324,
+    "training_labels": "non-lenses only",
+    "checkpoint_selection": "minimum validation non-lens relative reconstruction error",
+    "anomaly_score": "MSE / (mean squared input intensity + 1e-8); larger means more lens-like anomaly",
+    "raw_reconstruction_mse_metrics": {
+      "average_precision": 0.03326170859999283,
+      "roc_auc": 0.20431031441659825,
+      "count": 6081,
+      "positives": 346,
+      "prevalence": 0.05689853642493011,
+      "recall_at_fpr_le_0.01": 0.0,
+      "recall_at_fpr_le_0.001": 0.0
+    },
+    "elapsed_seconds": 125.9,
+    "manifest.csv_sha256": "4973790f345cea496622e923691aef8494112d84d954cd21c9378e5d043474f2",
+    "normalization.json_sha256": "c135720a7edb309c7ebcb24178d4cb8f6c6d06c7ac3e45e93fee1ba5b5672b5b",
+    "limitation": "Short CPU prototype; validation used for selection; no independent test claim.",
+    "validation": {
+      "average_precision": 0.04183012953069684,
+      "roc_auc": 0.35673861443020494,
+      "count": 6081,
+      "positives": 346,
+      "prevalence": 0.05689853642493011,
+      "recall_at_fpr_le_0.01": 0.0,
+      "recall_at_fpr_le_0.001": 0.0
+    },
+    "test_evaluated": false
+  },
+  "denoising_ae": {
+    "model": "denoising_ae",
+    "epochs": 2,
+    "seed": 429,
+    "device": "cpu",
+    "prototype_run": true,
+    "parameters": 20507,
+    "train_count": 24324,
+    "training_labels": "non-lenses only",
+    "checkpoint_selection": "minimum validation non-lens relative reconstruction error",
+    "anomaly_score": "MSE / (mean squared input intensity + 1e-8); larger means more lens-like anomaly",
+    "raw_reconstruction_mse_metrics": {
+      "average_precision": 0.033207979451467945,
+      "roc_auc": 0.20203748406247007,
+      "count": 6081,
+      "positives": 346,
+      "prevalence": 0.05689853642493011,
+      "recall_at_fpr_le_0.01": 0.0,
+      "recall_at_fpr_le_0.001": 0.0
+    },
+    "elapsed_seconds": 130.3,
+    "manifest.csv_sha256": "4973790f345cea496622e923691aef8494112d84d954cd21c9378e5d043474f2",
+    "normalization.json_sha256": "c135720a7edb309c7ebcb24178d4cb8f6c6d06c7ac3e45e93fee1ba5b5672b5b",
+    "limitation": "Short CPU prototype; validation used for selection; no independent test claim.",
+    "validation": {
+      "average_precision": 0.04735889301381095,
+      "roc_auc": 0.42040356597507444,
+      "count": 6081,
+      "positives": 346,
+      "prevalence": 0.05689853642493011,
+      "recall_at_fpr_le_0.01": 0.0,
+      "recall_at_fpr_le_0.001": 0.0
+    },
+    "test_evaluated": false
+  },
+  "pinn": {
+    "model": "SIS Poisson PINN (synthetic boundary-value benchmark)",
+    "seed": 429,
+    "steps": 1000,
+    "equation": "laplacian(psi)=2*kappa=b/r; alpha=gradient(psi); beta=theta-alpha",
+    "einstein_radius_dimensionless": 0.3,
+    "domain_radius": [
+      0.15,
+      1.0
+    ],
+    "holdout_potential_mae": 0.009486114606261253,
+    "holdout_deflection_rmse": 0.0248741265386343,
+    "holdout_poisson_residual_rmse": 0.03859424963593483,
+    "holdout_points": 4096,
+    "observational_data_used": false,
+    "known_inputs": [
+      "synthetic SIS mass/convergence field",
+      "inner/outer potential boundary values"
+    ],
+    "limitations": "Known synthetic mass, no PSF/noise, no mass inference. This is a separate PDE task; AP/AUC comparisons to lens classifiers are not appropriate."
+  }
+}

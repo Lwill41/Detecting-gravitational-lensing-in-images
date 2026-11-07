@@ -1,0 +1,133 @@
+{
+  "rows": [
+    21079,
+    20750,
+    20794,
+    21049,
+    20510,
+    19670,
+    20527,
+    19650,
+    20355,
+    21017,
+    20348,
+    20961,
+    21080,
+    20946,
+    20369,
+    20144,
+    20588,
+    19716,
+    21156,
+    20954,
+    20890,
+    20761,
+    21039,
+    21318,
+    20945,
+    20577,
+    21167,
+    20305,
+    20851,
+    20511,
+    19780,
+    19714,
+    43839,
+    37096,
+    22655,
+    25708,
+    42071,
+    48050,
+    49227,
+    40243,
+    31128,
+    31112,
+    27276,
+    48211,
+    36083,
+    34633,
+    28265,
+    26023,
+    38028,
+    42945,
+    25102,
+    23084,
+    44862,
+    45288,
+    33324,
+    26802,
+    47598,
+    41233,
+    35238,
+    36889,
+    48826,
+    26946,
+    36775,
+    21934
+  ],
+  "sample_size": 64,
+  "split": "validation",
+  "scope": "Controlled pixel transformations; global scaling preserves channel ratios and is not intrinsic luminosity or realistic noise variation.",
+  "models": {
+    "cnn": {
+      "score_units": "sigmoid score",
+      "rotate90_reflect": {
+        "mean_absolute_score_change": 0.03055666759610176,
+        "max_absolute_score_change": 0.47257763147354126
+      },
+      "brightness_times_1.5": {
+        "mean_absolute_score_change": 0.03791778162121773,
+        "max_absolute_score_change": 0.36761951446533203
+      },
+      "both": {
+        "mean_absolute_score_change": 0.04270259290933609,
+        "max_absolute_score_change": 0.48276951909065247
+      }
+    },
+    "symmetry_ae": {
+      "score_units": "relative reconstruction error",
+      "rotate90_reflect": {
+        "mean_absolute_score_change": 4.48198989033699e-09,
+        "max_absolute_score_change": 2.2351741790771484e-08
+      },
+      "brightness_times_1.5": {
+        "mean_absolute_score_change": 2.1333107724785805e-08,
+        "max_absolute_score_change": 2.5331974029541016e-07
+      },
+      "both": {
+        "mean_absolute_score_change": 2.1391315385699272e-08,
+        "max_absolute_score_change": 2.4586915969848633e-07
+      }
+    },
+    "plain_ae": {
+      "score_units": "relative reconstruction error",
+      "rotate90_reflect": {
+        "mean_absolute_score_change": 0.006057104095816612,
+        "max_absolute_score_change": 0.08054006099700928
+      },
+      "brightness_times_1.5": {
+        "mean_absolute_score_change": 0.0123417554423213,
+        "max_absolute_score_change": 0.05473843216896057
+      },
+      "both": {
+        "mean_absolute_score_change": 0.011798184365034103,
+        "max_absolute_score_change": 0.1470605731010437
+      }
+    },
+    "denoising_ae": {
+      "score_units": "relative reconstruction error",
+      "rotate90_reflect": {
+        "mean_absolute_score_change": 0.007765938062220812,
+        "max_absolute_score_change": 0.13767439126968384
+      },
+      "brightness_times_1.5": {
+        "mean_absolute_score_change": 0.01624416932463646,
+        "max_absolute_score_change": 0.0523359477519989
+      },
+      "both": {
+        "mean_absolute_score_change": 0.019112862646579742,
+        "max_absolute_score_change": 0.1454559862613678
+      }
+    }
+  }
+}
